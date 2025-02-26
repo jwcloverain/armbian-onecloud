@@ -129,7 +129,7 @@ jobs:
       fail-fast: false
       matrix:
         BRANCH:
-          - legacy
+          # - legacy
           - current
 
     steps:
@@ -190,20 +190,20 @@ jobs:
       fail-fast: false
       matrix:
         BRANCH:
-          - legacy
+          # - legacy
           - current
         RELEASE:
           # - focal # Ubuntu 20.04 LTS
-          - jammy # Ubuntu 22.04 LTS
+          # - jammy # Ubuntu 22.04 LTS
           # - lunar # Ubuntu 23.04
           # - buster # Debian 10
-          - bullseye # Debian 11
+          # - bullseye # Debian 11
           - bookworm # Debian 12
           - sid # Debian unstable
         TYPE:
-          - minimal
+          # - minimal
           - cli
-          - desktop
+          # - desktop
         include:
           - TYPE: desktop
             DESKTOP_ENVIRONMENT: xfce
@@ -211,7 +211,7 @@ jobs:
             DESKTOP_APPGROUPS_SELECTED: ""
         exclude:
           - RELEASE: sid
-            TYPE: desktop
+          - TYPE: desktop
 
     steps:
       - name: Import env
